@@ -22,3 +22,8 @@ Setelah itu, buat key dari website tersebut dengan:
 docker-compose exec php php artisan key:generate
 docker-compose exec php php artisan migrate
 ```
+
+Website akan dapat diakses dengan link berikut:
+```go
+localhost:8000
+```
