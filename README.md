@@ -16,21 +16,18 @@ Adapun fitur yang akan dapat dirasakan oleh warga Karawangi dengan menggunakan w
 Untuk menjalankan website ini, pastikan anda telah menginstall docker terlebih dahulu, lalu jalankan:
 
 ```sh
-docker-compose build
-docker-compose up -d
+cp .env.example .env
 ```
 
-Setelah itu, buat .env dengan:
-
 ```sh
-cp .env.example .env
+docker-compose build
+docker-compose up -d
 ```
 
 Website akan dapat diakses dengan link berikut:
 
 ```go
 localhost:8000
-
 ```
 
 Untuk melakukan chroot pada container, lakukan:
