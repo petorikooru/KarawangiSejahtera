@@ -6,6 +6,7 @@
 Selamat datang di KarawangiSejahtera, website dimana para warga di Karawangi dapat meningkatkan kesejahteraan hanya dalam modal website.
 
 Adapun fitur yang akan dapat dirasakan oleh warga Karawangi dengan menggunakan website ini adalah sebagai berikut:
+
 - Daftar Kegiatan & Pelatihan Keahlian
 - Form Pendaftaran Peserta Kesejahteraan Online
 - Informasi Bantuan UMKM
@@ -13,17 +14,25 @@ Adapun fitur yang akan dapat dirasakan oleh warga Karawangi dengan menggunakan w
 - Portal berita lokal terkait program kesejahteraan
 
 Untuk menjalankan website ini, pastikan anda telah menginstall docker terlebih dahulu, lalu jalankan:
+
 ```sh
 docker-compose build
 docker-compose up -d
 ```
-Setelah itu, buat key dari website tersebut dengan:
+
+Setelah itu, buat keydan .env dari website tersebut dengan:
+
 ```sh
 docker-compose exec php php artisan key:generate
 docker-compose exec php php artisan migrate
 ```
 
+```sh
+cp .env.example .env
+```
+
 Website akan dapat diakses dengan link berikut:
+
 ```go
 localhost:8000
 ```

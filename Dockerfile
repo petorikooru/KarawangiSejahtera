@@ -1,14 +1,18 @@
-# Dockerfile
 FROM alpine:latest
 
-# Install system dependencies
-RUN apk add --no-cache \
-    php83 \
+WORKDIR /var/www/html
+COPY . /var/www/html
+
+# Usefull utilities
+RUN apk add fish vim
+
+# Laravel stuff
+RUN apk add php83 \
     php83-fpm \
     php83-pdo \
     php83-pdo_mysql \
     php83-mbstring \
-    php83-xmlwriter\
+    php83-xmlwriter \
     php83-xml \
     php83-curl \
     php83-tokenizer \
@@ -21,60 +25,31 @@ RUN apk add --no-cache \
     php83-phar \
     php83-zip \
     php83-bcmath \
-    php83-gd \
-    nginx \
+    php83-gd
+
+# Other web stuff
+RUN apk add nginx \
     curl \
     git \
     nodejs \
     npm \
     supervisor
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN rm -rf composer-setup.php
 
-# Set working directory
-WORKDIR /var/www/html
+# Building process
+COPY . .
+RUN composer install --no-dev
+RUN chown -R nobody:nobody /var/www/html/storage
 
-# Copy Laravel source (if exists)
-COPY src/ /var/www/html
-
-# Install PHP dependencies
-RUN composer install --no-scripts --no-autoloader || true
-
-# Copy default nginx config
-COPY ./nginx.conf /etc/nginx/nginx.conf
-
-# Expose port
 EXPOSE 80
 
-# Start Supervisor to manage PHP-FPM and Nginx
-COPY ./supervisord.conf /etc/supervisord.conf
-
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
-
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy Laravel source (if exists)
-COPY src/ /var/www/html
-
-# Install PHP dependencies
-RUN composer install --no-scripts --no-autoloader || true
-
-# Copy default nginx config
 COPY ./nginx.conf /etc/nginx/nginx.conf
-
-# Expose port
-EXPOSE 80
-
-# Start Supervisor to manage PHP-FPM and Nginx
 COPY ./supervisord.conf /etc/supervisord.conf
-
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
-ARG UID=1000
-ARG GID=1000
-RUN addgroup -g $GID laravel && adduser -u $UID -G laravel -D laravel
+# FIX PERMISSION ISSUE KAJLSFHLJASHFKJLAF
+RUN chmod -R gu+w storage
+RUN chmod -R guo+w storage
