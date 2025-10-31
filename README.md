@@ -20,12 +20,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-Setelah itu, buat keydan .env dari website tersebut dengan:
-
-```sh
-docker-compose exec php php artisan key:generate
-docker-compose exec php php artisan migrate
-```
+Setelah itu, buat .env dengan:
 
 ```sh
 cp .env.example .env
@@ -35,4 +30,11 @@ Website akan dapat diakses dengan link berikut:
 
 ```go
 localhost:8000
+
+```
+
+Untuk melakukan chroot pada container, lakukan:
+
+```sh
+docker exec -it KarawangiSejahtera-app fish
 ```
