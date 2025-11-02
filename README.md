@@ -24,6 +24,11 @@ docker-compose build
 docker-compose up -d
 ```
 
+```sh
+docker exec KarawangiSejahtera-app php artisan key:generate
+docker exec KarawangiSejahtera-app php artisan migrate
+```
+
 Website akan dapat diakses dengan link berikut:
 
 ```go
