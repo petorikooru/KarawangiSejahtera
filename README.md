@@ -2,6 +2,9 @@
 
 > [!Note]
 > This website is still in heavy development, so expect some bug ig
+> 
+![Website Logo](./public/images/png/logo.png)
+
 
 Selamat datang di KarawangiSejahtera, website dimana para warga di Karawangi dapat meningkatkan kesejahteraan hanya dalam modal website.
 
