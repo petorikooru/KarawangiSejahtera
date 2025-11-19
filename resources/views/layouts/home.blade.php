@@ -10,20 +10,18 @@
     @yield('head')
 </head>
 
-<body>
-    <div class="bg-[#E4DFD7]">
-        <header>
-            @include('components.headerbars.home')
-        </header>
+<body class="flex flex-col min-h-screen">
+    <header>
+        @include('components.headerbars.home')
+    </header>
 
-        <main>
-            @yield('content')
-        </main>
+    <main class="flex-1">
+        @yield('contents')
+    </main>
 
-        <footer>
-            @include('components.footers.home')
-        </footer>
-    </div>
+    {{-- <footer>
+        @include('components.footers.home')
+    </footer> --}}
 </body>
 
 </html>

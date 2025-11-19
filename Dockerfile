@@ -40,7 +40,7 @@ RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN rm -rf composer-setup.php
 
 # Building process
-COPY . .
+# COPY . .
 RUN composer install --no-dev
 RUN chown -R nobody:nobody /var/www/html/storage
 
@@ -49,6 +49,9 @@ EXPOSE 80
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./supervisord.conf /etc/supervisord.conf
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+# Frontend stuff
+RUN npm install
 
 # FIX PERMISSION ISSUE KAJLSFHLJASHFKJLAF
 RUN chmod -R gu+w storage

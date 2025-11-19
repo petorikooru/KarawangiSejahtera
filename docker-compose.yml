@@ -4,10 +4,12 @@ services:
     container_name: KarawangiSejahtera-app
     restart: unless-stopped
     working_dir: /var/www/html
+    user: "${UID}:${GID}"
     volumes:
       - .:/var/www/html
     ports:
-      - "8000:80"
+      - "8000:80" # Laravel
+      - "5173:5173" # Vite
     depends_on:
       - db
     environment:
