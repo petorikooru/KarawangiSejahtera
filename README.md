@@ -2,6 +2,9 @@
 
 > [!Note]
 > This website is still in heavy development, so expect some bug ig
+> 
+![Website Logo](./public/images/png/logo.png)
+
 
 Selamat datang di KarawangiSejahtera, website dimana para warga di Karawangi dapat meningkatkan kesejahteraan hanya dalam modal website.
 
@@ -22,6 +25,11 @@ cp .env.example .env
 ```sh
 docker-compose build
 docker-compose up -d
+```
+
+```sh
+docker exec KarawangiSejahtera-app php artisan key:generate
+docker exec KarawangiSejahtera-app php artisan migrate
 ```
 
 Website akan dapat diakses dengan link berikut:
