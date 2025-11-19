@@ -11,11 +11,11 @@
 </head>
 
 <body class="flex flex-col min-h-screen">
-    <header>
+    <header id="header" class="sticky top-0">
         @include('components.headerbars.home')
     </header>
 
-    <main class="flex-1">
+    <main>
         @yield('contents')
     </main>
 

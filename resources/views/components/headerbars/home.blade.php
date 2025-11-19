@@ -1,4 +1,4 @@
-<header class=" absolute top-0 w-full flex justify-between items-center text-[#000000] bg-transparent font-semibold px-6 lg:px-10 2xl:px-30 py-15 ">
+<header id="header"  class=" absolute top-0 w-full flex justify-between items-center text-[#000000] font-semibold px-6 lg:px-10 2xl:px-30 py-15 z-50 transition-all duration-300 ease-in-out">
     <!-- Kiri -->
     <div class="shrink-0">
         <a href="/">
