@@ -212,3 +212,19 @@
 2025-11-19 12:58:38,749 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-11-19 12:58:38,749 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-11-19 12:58:38,749 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-11-26 06:49:31,322 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-11-26 06:49:31,372 INFO supervisord started with pid 1
+2025-11-26 06:49:32,379 INFO spawned: 'vite' with pid 7
+2025-11-26 06:49:32,382 INFO spawned: 'nginx' with pid 8
+2025-11-26 06:49:32,388 INFO spawned: 'php-fpm' with pid 9
+2025-11-26 06:49:32,868 WARN exited: vite (exit status 127; not expected)
+2025-11-26 06:49:33,872 INFO spawned: 'vite' with pid 24
+2025-11-26 06:49:33,874 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-11-26 06:49:33,875 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-11-26 06:49:34,059 WARN exited: vite (exit status 127; not expected)
+2025-11-26 06:49:36,066 INFO spawned: 'vite' with pid 36
+2025-11-26 06:49:36,264 WARN exited: vite (exit status 127; not expected)
+2025-11-26 06:49:39,273 INFO spawned: 'vite' with pid 48
+2025-11-26 06:49:39,462 WARN exited: vite (exit status 127; not expected)
+2025-11-26 06:49:40,464 INFO gave up: vite entered FATAL state, too many start retries too quickly
+2025-11-26 07:07:58,879 INFO reaped unknown pid 457 (exit status 0)
