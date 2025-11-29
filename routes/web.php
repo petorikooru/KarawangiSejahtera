@@ -11,6 +11,10 @@ Route::get("/laravel", function () {
     return view("welcome");
 });
 
+Route::get('/daftar', function () {
+    return view('pages.daftar.daftar'); 
+});
+
 Route::get("/charts", [chartsHome::class, "showCharts"]);
 
 Route::get("/login", fn() => view("pages.auth.login"))->name("login");
