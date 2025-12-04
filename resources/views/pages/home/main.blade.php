@@ -27,7 +27,11 @@
 
     <!-- Section 1: Hero Section -->
     <section class="h-screen bg-cover relative"
-        style="background-image: linear-gradient(to bottom, transparent 90%, #FDFBF7 100%), url('{{ asset('images/png/BackgroundHome.png') }}'); background-position: center 40%; background-size: cover;">
+        style="background-image:  url('{{ asset('images/png/BackgroundHome.png') }}');
+               background-position: center 40%;
+               background-size: cover;
+               background-attachment: fixed;
+               position: relative;">
         <div class="flex flex-col items-center text-center justify-center w-full h-full px-4">
             <p class="text-9xl font-bold mb-5">Selamat Datang</p>
             <p class="text-4xl font-normal mb-15">Di Situs Resmi Karawangi Sejahtera</p>
@@ -35,6 +39,7 @@
                 terus berkembang</p>
         </div>
     </section>
+
 
     <!-- Section 2: Introduction to Desa Karawangi Sejahtera -->
     <section class="bg-[#FDFBF7]">
@@ -69,7 +74,7 @@
         <div class="bg-white p-12 rounded-lg shadow-xl w-full sm:w-3/4 lg:w-2/3 flex flex-col md:flex-row">
             <!-- Text Section -->
             <div class="w-full md:w-1/2 pr-6 mb-6 md:mb-0">
-                <h2 class="text-6xl font-bold text-[#D4A017] mb-6">Sejarah Desa Karawangi Sejahtera</h2>
+                <h2 class="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] mb-6">Sejarah Desa Karawangi Sejahtera</h2>
                 <p class="text-lg text-gray-700">
                     Desa Karangwangi Sejahtera berdiri dari komunitas warga yang hidup dari pertanian dan usaha kecil.
                     Desa ini tumbuh lewat kerja sama warga yang terus membangun fasilitas, layanan publik, dan kegiatan sosial.
@@ -85,12 +90,12 @@
 
     <!-- Section 4: Berita Terkini -->
     <section class="bg-[#FDFBF7] py-12">
-        <div class="text-center text-5xl sm:text-4xl md:text-5xl font-semibold text-[#8B4513] mb-4 flex items-center justify-center sm:justify-start mx-6 sm:mx-30 lg:mx-60">
-            <span class="mr-2">
-                <img src="{{ asset('images/png/icons/news.png') }}" alt="News 1" class="w-12 sm:w-14 md:w-16 rounded-lg">
-            </span>
-            Berita Terkini
-        </div>
+        <div class="flex items-center space-x-4 h-min px-6 lg:px-60 ">
+             <x-bi-newspaper class="w-14 h-14 text-[#E3B765]" />
+             <h1 class="text-4xl sm:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
+                 Berita Terkini
+             </h1>
+         </div>
 
         <div class="w-full sm:w-3/4 mx-auto flex flex-col sm:flex-row justify-between sm:space-x-5 space-y-5 sm:space-y-0">
             <!-- MainNews Component -->
@@ -125,10 +130,14 @@
 
     <!-- Section 5: Carousel Section -->
     <section class="bg-[#FDFBF7] py-16">
-        <div class="text-center text-5xl font-semibold text-[#8B4513] mb-4 flex items-center justify-left mx-60">
-            <span class="mr-2"> <img src="{{ asset('images/png/icons/information.png') }}" alt="News 1" class="w-full rounded-lg"> </span>
-            Informasi Kegiatan Desa
+
+        <div class="flex items-center space-x-4 h-min px-6 lg:px-60 ">
+            <x-mdi-information class="w-14 h-14 text-[#E3B765]" />
+            <h1 class="text-4xl sm:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
+                Informasi Kegiatan Desa
+            </h1>
         </div>
+
 
         <div class="carousel w-full">
             <div class="carousel-images">
@@ -287,7 +296,7 @@
     </section>
 
     <!-- Footer -->
-    @include('components.footers.home')
+    <x-footers.home />
 
     <!-- Scripts -->
     <script>
@@ -341,7 +350,18 @@
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { position: 'bottom', labels: { font: { size: 16 } } }
+                    legend: {
+                      position: 'bottom',
+                      labels: {
+                        font: {
+                          size: 16
+                        },
+                        boxWidth: 20, // Adjust the size of the box
+                        usePointStyle: true, // This makes the markers circular
+                        pointStyle: 'circle', // Set the point style to circle
+                        padding: 40
+                      }
+                    }
                 }
             }
         });

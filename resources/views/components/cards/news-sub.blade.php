@@ -1,4 +1,3 @@
-<!-- resources/views/components/cards/news-sub.blade.php -->
 <div class="p-4 rounded-lg flex flex-row space-x-4">
     <img src="{{ $image }}" alt="News" class="max-w-[50%] rounded-lg">
     <div class="flex flex-col">

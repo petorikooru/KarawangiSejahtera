@@ -20,13 +20,22 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
     overflow-x: hidden;
 }
 
@@ -39,12 +48,12 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 0;
     min-height: 100vh;
-    background: #FDFBF7;
+    background: #fdfbf7;
     position: relative;
 }
 
 .daftar-user__sidebar {
-    background: #4F6D46;
+    background: #4f6d46;
     border-radius: 0 clamp(20px, 5vw, 45px) clamp(20px, 5vw, 45px) 0;
     display: none;
 }
@@ -63,7 +72,7 @@ body {
 }
 
 .daftar-user__hero {
-    background: #4F6D46;
+    background: #4f6d46;
     color: white;
     padding: clamp(2rem, 5vw, 3rem);
     display: flex;
@@ -82,7 +91,7 @@ body {
     font-size: clamp(1rem, 6vw, 2rem);
     margin-top: 50px;
     font-weight: 700;
-    color: #2B2B2B;
+    color: #2b2b2b;
     margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
     text-align: center;
     width: 100%;
@@ -92,28 +101,27 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Agar teks center vertikal */
-    height: 100vh;           /* WAJIB agar vertical centering bekerja */
-    
+    height: 100vh; /* WAJIB agar vertical centering bekerja */
+
     padding-left: 40px;
     text-align: left;
     font-size: 50px;
     font-weight: 600;
-    color: #FDFBF7;
+    color: #fdfbf7;
     line-height: 60px;
     margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
-
 .hero__title strong {
     font-weight: bold;
-    display: inline;   /* Penting */
+    display: inline; /* Penting */
     line-height: inherit; /* biar tidak mengubah jarak baris */
 }
 
 .hero__text {
     display: flex;
     font-size: clamp(1rem, 2.5vw, 1.75rem);
-    color: #FDFBF7 ;
+    color: #fdfbf7;
     font-weight: 200;
     line-height: 1.6;
     justify-content: center;
@@ -129,7 +137,7 @@ body {
 .daftar-user__form {
     width: 100%;
     max-width: clamp(300px, 90vw, 700px);
-    display: flex;  
+    display: flex;
     flex-direction: column;
     gap: clamp(0.5rem, 3vw, 1.4rem);
 }
@@ -150,7 +158,7 @@ body {
     font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: 700;
     padding-left: 10px;
-    color: #2B2B2B;
+    color: #2b2b2b;
     display: block;
 }
 
@@ -166,8 +174,9 @@ body {
     padding: clamp(0.5rem, 1.2vw, 0.55rem);
     background: rgba(90, 82, 70, 0.1);
     border-radius: clamp(10px, 2vw, 16px);
-    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.25);
-    border: clamp(2px, 0.3vw, 3px) solid #6B4E2E;
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px)
+        rgba(0, 0, 0, 0.25);
+    border: clamp(2px, 0.3vw, 3px) solid #6b4e2e;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -193,7 +202,7 @@ body {
     font-size: clamp(0.875rem, 2vw, 1.125rem);
     font-family: inherit;
     font-weight: 300;
-    color: #2B2B2B;
+    color: #2b2b2b;
     outline: none;
 }
 
@@ -207,7 +216,10 @@ body {
 
 .form-date {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(80px, 25vw, 200px), 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(clamp(80px, 25vw, 200px), 1fr)
+    );
     gap: clamp(0.5rem, 2vw, 0.75rem);
 }
 
@@ -220,14 +232,15 @@ body {
     font-family: inherit;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.25);
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px)
+        rgba(0, 0, 0, 0.25);
     transition: all 0.2s ease;
 }
 
 .form-date__input:hover,
 .form-date__input:focus {
     background: rgba(90, 82, 70, 0.15);
-    color: #2B2B2B;
+    color: #2b2b2b;
 }
 
 /* ============================================================================
@@ -236,7 +249,10 @@ body {
 
 .form-gender {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(100px, 40vw, 250px), 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(clamp(100px, 40vw, 250px), 1fr)
+    );
     gap: clamp(0.75rem, 2vw, 1rem);
 }
 
@@ -251,19 +267,20 @@ body {
     cursor: pointer;
     font-size: clamp(0.875rem, 2vw, 1rem);
     color: rgba(43, 43, 43, 0.5);
-    transition: all 0.2s ease;  
-    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px)
+        rgba(0, 0, 0, 0.25);
 }
 
 .form-radio:hover {
     background: rgba(90, 82, 70, 0.15);
-    color: #2B2B2B;
+    color: #2b2b2b;
     transform: translateY(-1px);
 }
 
 .form-radio input[type="radio"] {
     cursor: pointer;
-    accent-color: #4F6D46;
+    accent-color: #4f6d46;
     width: clamp(1rem, 2vw, 1.25rem);
     height: clamp(1rem, 2vw, 1.25rem);
 }
@@ -283,18 +300,19 @@ body {
     border-radius: clamp(10px, 2vw, 16px);
     font-size: clamp(0.875rem, 2vw, 1rem);
     font-family: inherit;
-    color: #2B2B2B;
-    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.25);
+    color: #2b2b2b;
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px)
+        rgba(0, 0, 0, 0.25);
     outline: none;
     transition: all 0.2s ease;
-    
 }
 
 .form-textarea:hover,
 .form-textarea:focus {
     background: rgba(90, 82, 70, 0.15);
     transform: translateY(-1px);
-    box-shadow: 0px clamp(3px, 0.7vw, 6px) clamp(3px, 0.7vw, 6px) rgba(0, 0, 0, 0.3);
+    box-shadow: 0px clamp(3px, 0.7vw, 6px) clamp(3px, 0.7vw, 6px)
+        rgba(0, 0, 0, 0.3);
 }
 
 .form-textarea::placeholder {
@@ -312,23 +330,25 @@ body {
     background: linear-gradient(
         133deg,
         rgba(213, 201, 184, 0.8) 0%,
-        #4F6D46 51%,
+        #4f6d46 51%,
         rgba(216, 204, 179, 0.5) 100%
     );
-    border: clamp(1px, 0.2vw, 2px) solid #5A5246;
+    border: clamp(1px, 0.2vw, 2px) solid #5a5246;
     border-radius: clamp(10px, 2vw, 16px);
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 600;
-    color: #FDFBF7;
+    color: #fdfbf7;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.25);
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px)
+        rgba(0, 0, 0, 0.25);
     margin-top: clamp(1rem, 2.5vw, 2rem);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0px clamp(4px, 0.8vw, 8px) clamp(4px, 0.8vw, 8px) rgba(0, 0, 0, 0.35);
+    box-shadow: 0px clamp(4px, 0.8vw, 8px) clamp(4px, 0.8vw, 8px)
+        rgba(0, 0, 0, 0.35);
 }
 
 .btn-submit:active {
@@ -341,8 +361,6 @@ body {
 
 .daftar-user__logo {
     position: absolute;
-    width: clamp(30px, 15vw, 125px);
-    height: clamp(10px, 15vw, 40px);
     object-fit: cover;
     top: clamp(0.5rem, 2vw, 1rem);
     right: clamp(0.5rem, 2vw, 1rem);
@@ -367,7 +385,7 @@ body {
     width: 100%;
 }
 
-.form-footer_column{
+.form-footer_column {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -375,7 +393,7 @@ body {
     width: 100%;
 }
 
-.form-footer_row{
+.form-footer_row {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
@@ -383,7 +401,7 @@ body {
     width: 100%;
 }
 
-.form-footer_left{
+.form-footer_left {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -391,7 +409,7 @@ body {
     width: 100%;
 }
 
-.form-footer_right{
+.form-footer_right {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -401,33 +419,33 @@ body {
 
 .form-footer__text_center {
     font-size: clamp(0.875rem, 2vw, 1rem);
-    color: #2B2B2B;
+    color: #2b2b2b;
     text-align: center;
 }
 
 .form-footer__text_left {
     font-size: clamp(0.875rem, 2vw, 1rem);
-    color: #2B2B2B;
+    color: #2b2b2b;
     text-align: left;
     margin-left: 60px;
 }
 
 .form-footer__text_right {
     font-size: clamp(0.875rem, 2vw, 1rem);
-    color: #2B2B2B;
+    color: #2b2b2b;
     text-align: right;
     margin-left: 150px;
 }
 
 .form-footer__link {
-    color: #4F6D46;
+    color: #4f6d46;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease;
 }
 
 .form-footer__link_right {
-    color: #4F6D46;
+    color: #4f6d46;
     text-decoration: none;
     font-weight: 600;
     text-align: right;
@@ -459,7 +477,7 @@ body {
 .social-button {
     width: clamp(50px, 12vw, 70px);
     height: clamp(50px, 12vw, 70px);
-    border: clamp(2px, 0.3vw, 3px) solid #D0D0D0;
+    border: clamp(2px, 0.3vw, 3px) solid #d0d0d0;
     border-radius: clamp(12px, 2vw, 18px);
     background: white;
     cursor: pointer;
@@ -467,12 +485,14 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.1);
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px)
+        rgba(0, 0, 0, 0.1);
 }
 
 .social-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0px clamp(3px, 0.7vw, 6px) clamp(3px, 0.7vw, 6px) rgba(0, 0, 0, 0.15);
+    box-shadow: 0px clamp(3px, 0.7vw, 6px) clamp(3px, 0.7vw, 6px)
+        rgba(0, 0, 0, 0.15);
 }
 
 .social-button img {

@@ -16,7 +16,7 @@
 
     <!-- Right (Buttons) -->
     <div class="hidden md:flex space-x-4">
-        <a href="/signup">
+        <a href="/daftar2">
             <x-buttons.small class="bg-[#5A5246] text-[#FFFFFF] hover:bg-gradient-to-b hover:from-[#CDAA65] hover:to-[#675533]">
                 Daftar
             </x-buttons.small>

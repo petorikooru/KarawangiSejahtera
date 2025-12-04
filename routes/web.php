@@ -11,16 +11,20 @@ Route::get("/laravel", function () {
     return view("welcome");
 });
 
-Route::get('/daftar', function () {
-    return view('pages.daftar.daftar'); 
+Route::get("/daftar", function () {
+    return view("pages.daftar.daftar");
 });
 
-route::get('/daftar2', function () {
-    return view('pages.daftar.daftar2'); 
+route::get("/daftar2", function () {
+    return view("pages.daftar.daftar2");
 });
 
-route::get('/login', function () {
-    return view('pages.login.login'); 
+route::get("/login", function () {
+    return view("pages.login.login");
+});
+
+route::get("/user/home", function () {
+    return view("pages.user.home");
 });
 
 Route::get("/charts", [chartsHome::class, "showCharts"]);
@@ -33,15 +37,21 @@ Route::post("/register", [AuthController::class, "register"]);
 
 Route::get("/logout", [AuthController::class, "logout"]);
 
-Route::group(['middleware' => ['auth', 'check_role:admin']], function () {
-    Route::get('/admin', fn() => 'halaman admin');
+Route::group(["middleware" => ["auth", "check_role:admin"]], function () {
+    Route::get("/admin", fn() => "halaman admin");
 });
-Route::group(['middleware' => ['auth', 'check_role:user', 'check_status']], function () {
-    Route::get('/user', fn() => 'halaman user');
-});
-Route::group(['middleware' => ['auth', 'check_role:user']], function () {
-    Route::get('/verify', [VerificationController::class, 'showVerifyForm']);
-    Route::post('/verify', [VerificationController::class, 'sendOtp']);
-    Route::get('/verify/{unique_id}', [VerificationController::class, 'show']);
-    Route::put('/verify/{unique_id}', [VerificationController::class, 'update']);
+Route::group(
+    ["middleware" => ["auth", "check_role:user", "check_status"]],
+    function () {
+        Route::get("/user", fn() => "halaman user");
+    },
+);
+Route::group(["middleware" => ["auth", "check_role:user"]], function () {
+    Route::get("/verify", [VerificationController::class, "showVerifyForm"]);
+    Route::post("/verify", [VerificationController::class, "sendOtp"]);
+    Route::get("/verify/{unique_id}", [VerificationController::class, "show"]);
+    Route::put("/verify/{unique_id}", [
+        VerificationController::class,
+        "update",
+    ]);
 });
