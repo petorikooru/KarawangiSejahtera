@@ -212,6 +212,7 @@
 2025-11-19 12:58:38,749 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-11-19 12:58:38,749 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-11-19 12:58:38,749 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+<<<<<<< Updated upstream
 2025-11-26 06:49:31,322 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
 2025-11-26 06:49:31,372 INFO supervisord started with pid 1
 2025-11-26 06:49:32,379 INFO spawned: 'vite' with pid 7
@@ -358,3 +359,38 @@
 2025-12-04 00:46:12,481 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-12-04 00:46:12,481 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-12-04 00:46:12,481 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+=======
+2025-11-21 07:40:46,239 WARN received SIGTERM indicating exit request
+2025-11-21 07:40:46,242 INFO waiting for vite, nginx, php-fpm to die
+2025-11-21 07:40:46,303 INFO stopped: php-fpm (exit status 0)
+2025-11-21 07:40:46,375 INFO stopped: nginx (exit status 0)
+2025-11-21 07:40:46,562 INFO stopped: vite (exit status 0)
+2025-11-21 07:40:46,562 INFO reaped unknown pid 34 (exit status 0)
+2025-11-26 17:09:11,393 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-11-26 17:09:11,396 INFO supervisord started with pid 1
+2025-11-26 17:09:12,410 INFO spawned: 'vite' with pid 17
+2025-11-26 17:09:12,411 INFO spawned: 'nginx' with pid 18
+2025-11-26 17:09:12,412 INFO spawned: 'php-fpm' with pid 19
+2025-11-26 17:09:13,984 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-11-26 17:09:13,984 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-11-26 17:09:13,984 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+>>>>>>> Stashed changes
+2025-12-04 08:32:28,733 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-12-04 08:32:28,736 INFO supervisord started with pid 1
+2025-12-04 08:32:29,748 INFO spawned: 'vite' with pid 7
+2025-12-04 08:32:29,749 INFO spawned: 'nginx' with pid 8
+2025-12-04 08:32:29,750 INFO spawned: 'php-fpm' with pid 9
+2025-12-04 08:32:29,902 WARN received SIGTERM indicating exit request
+2025-12-04 08:32:29,902 INFO waiting for vite, nginx, php-fpm to die
+2025-12-04 08:32:29,906 INFO stopped: php-fpm (exit status 0)
+2025-12-04 08:32:29,933 INFO stopped: nginx (exit status 0)
+2025-12-04 08:32:29,938 WARN stopped: vite (terminated by SIGTERM)
+2025-12-04 08:32:32,875 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-12-04 08:32:32,879 INFO supervisord started with pid 1
+2025-12-04 08:32:33,881 INFO spawned: 'vite' with pid 7
+2025-12-04 08:32:33,882 INFO spawned: 'nginx' with pid 8
+2025-12-04 08:32:33,883 INFO spawned: 'php-fpm' with pid 9
+2025-12-04 08:32:35,612 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-04 08:32:35,612 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-04 08:32:35,612 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-04 10:24:42,497 INFO reaped unknown pid 225 (exit status 0)
