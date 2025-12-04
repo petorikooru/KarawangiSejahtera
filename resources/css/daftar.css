@@ -2,6 +2,18 @@
    RESPONSIVE DESIGN SYSTEM - Uses clamp() for fluid typography & spacing
    ============================================================================ */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ============================================================================
+   DAFTAR USER REGISTRATION FORM STYLES
+   ============================================================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -47,6 +59,7 @@ body {
     position: relative;
     overflow: auto;
     max-height: 100vh;
+    overflow-y: hidden;
 }
 
 .daftar-user__hero {
@@ -67,7 +80,7 @@ body {
 
 .daftar-user__title {
     font-size: clamp(1rem, 6vw, 2rem);
-    margin-top: 80px;
+    margin-top: 50px;
     font-weight: 700;
     color: #2B2B2B;
     margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
@@ -80,13 +93,13 @@ body {
     flex-direction: column;
     justify-content: center; /* Agar teks center vertikal */
     height: 100vh;           /* WAJIB agar vertical centering bekerja */
-
+    
     padding-left: 40px;
     text-align: left;
     font-size: 50px;
     font-weight: 600;
     color: #FDFBF7;
-    line-height: 80px;
+    line-height: 60px;
     margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
@@ -118,14 +131,14 @@ body {
     max-width: clamp(300px, 90vw, 700px);
     display: flex;  
     flex-direction: column;
-    gap: clamp(0.5rem, 3vw, 0.8rem);
+    gap: clamp(0.5rem, 3vw, 1.4rem);
 }
 
 .form-group {
     display: flex;
-    padding-left: 50px;
+    padding-left: 60px;
     flex-direction: column;
-    width: 500px;
+    width: 520px;
     gap: clamp(0.5rem, 1.5vw, 0.75rem);
 }
 
@@ -167,6 +180,7 @@ body {
 
 .form-input__icon {
     font-size: clamp(1.25rem, 3vw, 2rem);
+    padding-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,8 +307,8 @@ body {
 
 .btn-submit {
     padding: clamp(0.5rem, 1.5vw, 0.75rem);
-    width: 450px;
-    margin-left: 50px;
+    width: 460px;
+    margin-left: 60px;
     background: linear-gradient(
         133deg,
         rgba(213, 201, 184, 0.8) 0%,
@@ -338,6 +352,133 @@ body {
 
 .daftar-user__logo:hover {
     opacity: 1;
+}
+
+/* ============================================================================
+   FORM FOOTER
+   ============================================================================ */
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-footer_column{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-footer_row{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-footer_left{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-footer_right{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-footer__text_center {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: #2B2B2B;
+    text-align: center;
+}
+
+.form-footer__text_left {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: #2B2B2B;
+    text-align: left;
+    margin-left: 60px;
+}
+
+.form-footer__text_right {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: #2B2B2B;
+    text-align: right;
+    margin-left: 150px;
+}
+
+.form-footer__link {
+    color: #4F6D46;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.form-footer__link_right {
+    color: #4F6D46;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: right;
+    transition: all 0.2s ease;
+}
+
+.form-footer__link:hover {
+    text-decoration: underline;
+}
+
+.form-footer__divider {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    text-align: center;
+    color: rgba(43, 43, 43, 0.5);
+    margin-top: 0.5rem;
+}
+
+/* ============================================================================
+   SOCIAL LOGIN BUTTONS
+   ============================================================================ */
+
+.social-login {
+    display: flex;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    justify-content: center;
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+}
+
+.social-button {
+    width: clamp(50px, 12vw, 70px);
+    height: clamp(50px, 12vw, 70px);
+    border: clamp(2px, 0.3vw, 3px) solid #D0D0D0;
+    border-radius: clamp(12px, 2vw, 18px);
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0px clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) rgba(0, 0, 0, 0.1);
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px clamp(3px, 0.7vw, 6px) clamp(3px, 0.7vw, 6px) rgba(0, 0, 0, 0.15);
+}
+
+.social-button img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 }
 
 /* ============================================================================

@@ -27,19 +27,24 @@ docker-compose build
 docker-compose up -d
 ```
 
+Untuk melakukan chroot pada container, lakukan:
+
 ```sh
-docker exec KarawangiSejahtera-app php artisan key:generate
-docker exec KarawangiSejahtera-app php artisan migrate
+docker exec -it KarawangiSejahtera-app fish
+```
+
+Di dalam container docker
+```sh
+composer update
+php artisan key:generate
+php artisan migrate
+
+npm install
+npm run dev
 ```
 
 Website akan dapat diakses dengan link berikut:
 
 ```go
 localhost:8000
-```
-
-Untuk melakukan chroot pada container, lakukan:
-
-```sh
-docker exec -it KarawangiSejahtera-app fish
 ```

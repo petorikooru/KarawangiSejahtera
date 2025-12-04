@@ -15,10 +15,18 @@ Route::get('/daftar', function () {
     return view('pages.daftar.daftar'); 
 });
 
+route::get('/daftar2', function () {
+    return view('pages.daftar.daftar2'); 
+});
+
+route::get('/login', function () {
+    return view('pages.login.login'); 
+});
+
 Route::get("/charts", [chartsHome::class, "showCharts"]);
 
-Route::get("/login", fn() => view("pages.auth.login"))->name("login");
-Route::post("/login", [AuthController::class, "login"]);
+// Route::get("/login", fn() => view("pages.auth.login"))->name("login");
+// Route::post("/login", [AuthController::class, "login"]);
 
 Route::get("/register", fn() => view("pages.auth.register"))->name("register");
 Route::post("/register", [AuthController::class, "register"]);
