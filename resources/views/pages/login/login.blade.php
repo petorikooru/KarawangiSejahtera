@@ -46,7 +46,7 @@
                     <div class="form-footer_row">
                         <p class="form-footer__text_left">
                             Belum punya Akun?
-                            <a href="#" class="form-footer__link">Daftar</a>
+                            <a href="/daftar2" class="form-footer__link">Daftar</a>
                         </p>
 
                         <p class="form-footer__text_right">
@@ -66,7 +66,7 @@
                     </button>
                 </div>
 
-                <img class="daftar-user__logo" src="{{'/images/png/logo.png'}}" alt="Logo Karangwangi Sejahtera" />
+                <a href="/"><img class="daftar-user__logo w-50 h-auto" src="{{'/images/png/logo.png'}}" alt="Logo Karangwangi Sejahtera" /></a>
         </div>
     </div>
 </body>

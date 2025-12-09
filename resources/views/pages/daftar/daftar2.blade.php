@@ -11,7 +11,7 @@
     <body>
         <div class="daftar-user">
             <div class="daftar-user__sidebar">
-                <h2 class="hero__title">Bersama <strong>Karangwangi</strong> Wujudkan Kesejahteraan. 
+                <h2 class="hero__title">Bersama <strong>Karangwangi</strong> Wujudkan Kesejahteraan.
                 <p class="hero__text">Dapatkan informasi terbaru dan akses berbagai layanan desa dalam satu tempat</p></h2>
                 </div>
 
@@ -47,7 +47,7 @@
                 </main>
 
                 <div class="form-footer">
-                    <p class="form-footer__text">Sudah punya Akun? <a href="#" class="form-footer__link">Login</a></p>
+                    <p class="form-footer__text">Sudah punya Akun? <a href="/login" class="form-footer__link">Login</a></p>
                     <p class="form-footer__divider">- Atau -</p>
                 </div>
 
@@ -60,7 +60,7 @@
                     </button>
                 </div>
 
-                <img class="daftar-user__logo" src="{{'/images/png/logo.png'}}" alt="Logo Karangwangi Sejahtera" />
+                <a href="/"><img class="daftar-user__logo w-50 h-auto" src="{{'/images/png/logo.png'}}" alt="Logo Karangwangi Sejahtera" /></a>
             </div>
         </div>
     </body>
