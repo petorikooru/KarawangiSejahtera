@@ -8,9 +8,18 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class UserController extends Controller
 {
 
-    public function ShowAll(Request $request) {
-        $username = 'Hilman';
+    public function Home(Request $request) {
+        $username       = 'Hilman';
+        $namalengkap    = 'Hilman Sky';
+        $tanggallahir   = '12 Juni 1995';
+        $alamat         = 'Jalan Telekomunikasi No.1';
+        $nomortelepon   = '081234567890';
+        $gender         = 'Laki-laki';
 
+        $password = '123';
+
+
+        // DUmmy data
         $berita = collect([
             (object)[
                 'kategori' => 'Teknologi',
@@ -84,5 +93,55 @@ class UserController extends Controller
 
         // Your usual return for the non-AJAX request
         return view('pages.user.home', compact('username', 'paginatedBerita'));
+    }
+
+    public function Notifikasi()
+    {
+        $notifications = collect([
+            (object)[
+                'status' => 'Baru',
+                'title' => 'Registrasi Berhasil: Silahkan Lengkapi Profile Anda!',
+                'message' => 'Registrasi berhasil. Lengkapi profil Kamu agar layanan lebih sesuai dan proses verifikasi berjalan cepat.',
+                'created_at' => now()->subDays(1),
+                'from' => 'Admin'
+            ],
+            (object)[
+                'status' => 'Pesan',
+                'title' => 'Registrasi Berhasil: Silahkan Lengkapi Profile Anda!',
+                'message' => 'Registrasi berhasil. Lengkapi profil Kamu agar layanan lebih sesuai dan proses verifikasi berjalan cepat.',
+                'created_at' => now()->subDays(2),
+                'from' => 'Admin'
+            ],
+            (object)[
+                'status' => 'Pesan',
+                'title' => 'Registrasi Berhasil: Silahkan Lengkapi Profile Anda!',
+                'message' => 'Registrasi berhasil. Lengkapi profil Kamu agar layanan lebih sesuai dan proses verifikasi berjalan cepat.',
+                'created_at' => now()->subDays(3),
+                'from' => 'Admin'
+            ],
+            (object)[
+                'status' => 'Pesan',
+                'title' => 'Registrasi Berhasil: Silahkan Lengkapi Profile Anda!',
+                'message' => 'Registrasi berhasil. Lengkapi profil Kamu agar layanan lebih sesuai dan proses verifikasi berjalan cepat.',
+                'created_at' => now()->subDays(4),
+                'from' => 'Admin'
+            ],
+        ]);
+
+        return view('pages.user.notifikasi', compact('notifications'));
+    }
+
+    public function Pengaturan(Request $request) {
+        $username       = 'Hilman';
+        $namalengkap    = 'M Hilman Rofiq';
+        $tanggallahir   = '12 Juni 1995';
+        $alamat         = 'Jalan Telekomunikasi No.1';
+        $nomortelepon   = '081234567890';
+        $gender         = 'Laki-laki';
+        $email          = 'hilmanganteng@gmail.com';
+
+        $password = '123';
+
+        return view('pages.user.pengaturan', compact('namalengkap', 'tanggallahir', 'alamat', 'nomortelepon', 'gender', 'email'));
     }
 }

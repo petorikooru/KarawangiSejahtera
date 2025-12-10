@@ -22,22 +22,22 @@
     />
 
     <!-- Main Content -->
-    <div class="flex-1 ml-0 md:ml-20 mt-4 sm:mt-8 md:mt-16">
+    <div class="flex-1 ml-20 mt-4 sm:mt-8 md:mt-16">
 
         <!-- Hello Section -->
-        <section id="home" class="text-center mx-20 pt-24">
-            <h2 class="text-4xl font-bold text-[#D4A017] py-6">
+        <section id="home" class="text-center mx-20 pt-12">
+            <h2 class="text-6xl font-bold  text-gradient bg-clip-text text-transparent bg-gradient-to-b from-[#E3B765] to-[#7D6538]  py-6">
                 Tempat di mana tradisi membimbing langkah dan kebersamaan meneguhkan arah.
             </h2>
-            <img src="{{ asset('images/png/sample/user1.png') }}" alt="Image" class="mx-auto w-full h-[800px] object-cover shadow-lg rounded-2xl">
+            <img src="{{ asset('images/png/sample/user1.png') }}" alt="Image" class="mx-auto w-full h-[700px] object-cover shadow-lg rounded-2xl">
         </section>
 
         <!-- Berita Section -->
-        <section id="berita" class="mx-4 sm:mx-6 md:mx-12 lg:mx-20 xl:mx-40 my-4 sm:my-6 md:my-10 p-4 sm:p-6 md:p-10">
+        <section id="berita" class="mx-4 md:mx-12 lg:mx-20 xl:mx-40 my-4 sm:my-6 md:my-10 p-4 sm:p-6 md:p-10">
 
             <div class="flex items-center space-x-4 h-min">
                 <x-bi-newspaper class="w-14 h-14 text-[#E3B765]" />
-                <h1 class="text-4xl lg:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
                 Berita Terkini
                 </h1>
             </div>
@@ -62,21 +62,14 @@
     $(document).ready(function() {
         // Intercept the click on pagination links
         $(document).on('click', '.pagination a', function(e) {
-            e.preventDefault();  // Prevent the default anchor link behavior
+            e.preventDefault();
 
-            var url = $(this).attr('href');  // Get the URL for the pagination link
-
-            // Make an AJAX request to fetch the content
+            var url = $(this).attr('href'); 
             $.ajax({
                 url: url,
                 type: 'GET',
                 success: function(data) {
-                    // Replace the content of the #berita-container with the new content
-                    $('#berita-container').html(data);
-
-                    // Optionally, prevent page scroll jump by maintaining the current scroll position
-                    // You can also scroll the page to the top of the section if you need
-                    // $("html, body").animate({ scrollTop: $('#berita').offset().top }, 300); // Uncomment to scroll to the berita section
+                    $('#berita').html(data);
                 },
                 error: function(xhr, status, error) {
                     console.log("Error: " + error);

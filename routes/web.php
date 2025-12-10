@@ -2,8 +2,6 @@
 
 use App\Http\Requests\chartsHome;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\UserController;
 
 Route::get("/", function () {
@@ -26,14 +24,9 @@ route::get("/login", function () {
     return view("pages.login.login");
 });
 
-Route::get("/user/home", [UserController::class, 'ShowAll']);
-
-
-route::get("user/pengaturan", function () {
-    return view("pages.user.pengaturan");
-});
-
-route::get("user/notifikasi",   [NotificationController::class, 'showNotifications']);
+Route::get("/user/home",        [UserController::class, 'Home']);
+route::get("user/pengaturan",   [UserController::class, 'Pengaturan']);
+route::get("user/notifikasi",   [UserController::class, 'Notifikasi']);
 
 route::get("user/pelatihan", function () {
     return view("pages.user.pelatihan");

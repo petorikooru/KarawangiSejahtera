@@ -1,4 +1,18 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+
+    <!-- TODO: Make it components -->
+    <!-- @foreach ($paginatedBerita as $article)
+        <x-cards.news-user
+            thumbnail   = "{{ $article->thumbnail }}"
+            title       = "{{ $article->judul }}"
+            category    = "{{ $article->kategori }}"
+            date        = "{{ $article->tanggal->format('d M Y') }}"
+            source      = "{{ $article->sumber }}"
+            description = "{{ $article->deskripsi }}"
+            link        = "#"
+        />
+    @endforeach -->
+
     @foreach ($paginatedBerita as $article)
         <article class="group relative overflow-hidden rounded-2xl shadow-xl h-64 sm:h-72 md:h-80 transition-all duration-300 hover:shadow-2xl cursor-pointer">
             <a href="#" class="block w-full h-full">

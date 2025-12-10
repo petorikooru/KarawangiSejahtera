@@ -49,7 +49,17 @@
 
     <div class="sidebar-item">
         <a href="/user/pengaturan" class="flex items-center">
-            <x-heroicon-s-user class="w-6 h-auto"/>
+            
+            @if ($icon ?? false)
+                <img 
+                    src="{{ asset($icon) }}" 
+                    alt="User Avatar" 
+                    class="w-6 h-6 rounded-full object-cover border-1"
+                >
+            @else
+                <x-heroicon-s-user class="w-6 h-6"/>
+            @endif
+
             <span class="ml-2 text-sm sidebar-text opacity-0">{{ $user }}</span>
         </a>
     </div>
