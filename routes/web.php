@@ -24,7 +24,7 @@ route::get("/login", function () {
     return view("pages.login.login");
 });
 
-Route::get("/user/home",        [UserController::class, 'Home']);
+Route::get("/user/home",        [UserController::class, 'Main']);
 route::get("user/pengaturan",   [UserController::class, 'Pengaturan']);
 route::get("user/notifikasi",   [UserController::class, 'Notifikasi']);
 
