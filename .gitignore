@@ -6,7 +6,17 @@
 .env
 Homestead.yaml
 Homestead.json
+supervisord.log
 
+
+<<<<<<< HEAD
+/public/build
+/storage/pail
+.env.backup
+.env.production
+.phpactor.json
+auth.json
+=======
 # Laravel IDE helper / debug
 .phpunit.result.cache
 .phpunit.cache
@@ -27,3 +37,4 @@ Thumbs.db
 
 # Docker
 docker-compose.override.yml
+>>>>>>> 4c41033e530cfe33e99f7167cd692554eabfd9a4
