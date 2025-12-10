@@ -1,33 +1,59 @@
 <!-- Sidebar -->
-<div id="sidebar" class="sidebar fixed top-0 left-0 h-screen w-20 bg-[#333333] text-white p-4 flex flex-col items-start shadow-lg rounded-r-2xl transition-all duration-500 z-50">
+<div id="sidebar" class="sidebar fixed top-0 left-0 h-screen w-20 bg-[#333333] text-white p-4 flex flex-col items-start shadow-lg transition-all duration-500 z-50">
     <div class="text-3xl mb-5 cursor-pointer" onclick="toggleSidebar()">
         <img src="{{ asset('images/png/logo_white.png') }}" alt="Logo" class="w-12 h-auto">
     </div>
-    <div class="sidebar-item">
-        <a href="/user/home" class="flex items-center">
-            <x-heroicon-s-home class="h-auto w-6"/>
-            <span class="ml-2 text-sm sidebar-text opacity-0">Home</span>
-        </a>
+
+    <div class="flex-grow">
+        <div class="sidebar-item">
+            <a href="/user/home#home" class="flex items-center">
+                <x-heroicon-s-home class="h-auto w-6"/>
+                <span class="ml-2 text-sm sidebar-text opacity-0">Home</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="/user/home#berita" class="flex items-center">
+                <x-heroicon-s-newspaper class="w-6 h-auto"/>
+                <span class="ml-2 text-sm sidebar-text opacity-0">Berita Terkini</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="/user/home#desa-bersuara" class="flex items-center">
+                <x-iconoir-sound-high-solid class="w-6 h-auto" />
+                <span class="ml-2 text-sm sidebar-text opacity-0">Desa Bersuara</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="/user/home#umkm" class="flex items-center">
+                <x-ri-store-3-fill class="w-6 h-auto"/>
+                <span class="ml-2 text-sm sidebar-text opacity-0">UMKM</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="/user/home#pelatihan" class="flex items-center">
+                <x-ri-headphone-fill class="w-6 h-auto"/>
+                <span class="ml-2 text-sm sidebar-text opacity-0">Pelatihan</span>
+            </a>
+        </div>
     </div>
+
     <div class="sidebar-item">
-        <a href="/user/desa-bersuara" class="flex items-center">
-            <x-iconoir-sound-high-solid class="w-6 h-auto" />
-            <span class="ml-2 text-sm sidebar-text opacity-0">Desa Bersuara</span>
-        </a>
-    </div>
-    <div class="sidebar-item">
-        <a href="/user/daftar-umkm" class="flex items-center">
-            <x-ri-store-3-fill class="w-6 h-auto"/>
-            <span class="ml-2 text-sm sidebar-text opacity-0">UMKM</span>
+        <a href="/user/notifikasi" class="flex items-center">
+            <x-ri-notification-2-fill class="w-6 h-auto"/>
+            <span class="ml-2 text-sm sidebar-text opacity-0">Notifikasi</span>
         </a>
     </div>
 
     <div class="sidebar-item">
-        <a href="/user/pelatihan" class="flex items-center">
-            <x-ri-headphone-fill class="w-6 h-auto"/>
-            <span class="ml-2 text-sm sidebar-text opacity-0">Pelatihan</span>
+        <a href="/user/pengaturan" class="flex items-center">
+            <x-heroicon-s-user class="w-6 h-auto"/>
+            <span class="ml-2 text-sm sidebar-text opacity-0">{{ $user }}</span>
         </a>
     </div>
+
 </div>
 
 <script>
@@ -71,12 +97,6 @@
     /* Sidebar Styling */
     #sidebar {
         transition: width 0.5s ease, box-shadow 0.3s ease;
-    }
-
-    /* Rounded corners */
-    #sidebar {
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
     }
 
     /* Sidebar Buttons */

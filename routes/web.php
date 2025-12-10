@@ -2,6 +2,9 @@
 
 use App\Http\Requests\chartsHome;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\UserController;
 
 Route::get("/", function () {
     return view("pages.home.main");
@@ -23,11 +26,32 @@ route::get("/login", function () {
     return view("pages.login.login");
 });
 
-route::get("/user/home", function () {
-    return view("pages.user.home");
+Route::get("/user/home", [UserController::class, 'ShowAll']);
+
+
+route::get("user/pengaturan", function () {
+    return view("pages.user.pengaturan");
+});
+
+route::get("user/notifikasi",   [NotificationController::class, 'showNotifications']);
+
+route::get("user/pelatihan", function () {
+    return view("pages.user.pelatihan");
+});
+
+route::get("user/desa-bersuara", function () {
+    return view("pages.user.desa-bersuara");
+});
+
+route::get("user/umkm", function () {
+    return view("pages.user.umkm");
 });
 
 Route::get("/charts", [chartsHome::class, "showCharts"]);
+
+
+
+// Backend stuff (i do NOT understand any at all lmao -demetori0)
 
 // Route::get("/login", fn() => view("pages.auth.login"))->name("login");
 // Route::post("/login", [AuthController::class, "login"]);

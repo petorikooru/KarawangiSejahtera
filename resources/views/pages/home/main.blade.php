@@ -27,23 +27,21 @@
 
     <!-- Section 1: Hero Section -->
     <section class="h-screen bg-cover relative"
-        style="background-image:  url('{{ asset('images/png/BackgroundHome.png') }}');
+        style="background-image: url('{{ asset('images/png/BackgroundHome.png') }}');
                background-position: center 40%;
                background-size: cover;
                background-attachment: fixed;
                position: relative;">
         <div class="flex flex-col items-center text-center justify-center w-full h-full px-4">
-            <p class="text-9xl font-bold mb-5">Selamat Datang</p>
-            <p class="text-4xl font-normal mb-15">Di Situs Resmi Karawangi Sejahtera</p>
-            <p class="text-base leading-loose max-w-xl mx-auto">Mewujudkan masyarakat Karawangi yang mandiri, sejahtera, dan
-                terus berkembang</p>
+            <p class="text-5xl sm:text-7xl lg:text-9xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-b from-[#E3B765] to-[#7D6538] py-4">Selamat Datang</p>
+            <p class="text-3xl sm:text-4xl font-semibold mb-12">Di Situs Resmi Desa Karawangi Sejahtera</p>
+            <p class="text-base sm:text-lg leading-loose mx-auto mb-25">Mewujudkan masyarakat Karawangi yang mandiri, sejahtera, dan terus berkembang</p>
         </div>
     </section>
 
-
     <!-- Section 2: Introduction to Desa Karawangi Sejahtera -->
-    <section class="bg-[#FDFBF7]">
-        <div class="container mx-auto px-6 lg:px-20 py-12 max-w-screen-xl">
+    <section class="bg-gradient-to-b from-[#FFFFFF] to-[#FDFBF7] py-12">
+        <div class="container mx-auto px-6 lg:px-20 max-w-screen-xl">
             <div class="flex items-center space-x-4 mb-6">
                 <x-bi-newspaper class="w-14 h-14 text-[#E3B765]" />
                 <h2 class="text-4xl sm:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-5">
@@ -69,13 +67,14 @@
             </div>
         </div>
     </section>
+
     <!-- Section 3: Desa Sejarah -->
     <section class="min-h-[75vh] bg-[#FDFBF7] flex items-center justify-center py-24">
-        <div class="bg-white p-12 rounded-lg shadow-xl w-full sm:w-3/4 lg:w-2/3 flex flex-col md:flex-row">
+        <div class="bg-white p-12 rounded-lg shadow-xl w-full sm:w-3/4 md:w-5/6 lg:w-10/13 flex flex-col xl:flex-row">
             <!-- Text Section -->
-            <div class="w-full md:w-1/2 pr-6 mb-6 md:mb-0">
-                <h2 class="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] mb-6">Sejarah Desa Karawangi Sejahtera</h2>
-                <p class="text-lg text-gray-700">
+            <div class="w-full xl:w-1/2 pr-6 mb-6 lg:mb-0">
+                <h2 class="text-4xl sm:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] mb-6 py-10">Sejarah Desa Karawangi Sejahtera</h2>
+                <p class="text-lg sm:text-xl text-gray-700 text-justify">
                     Desa Karangwangi Sejahtera berdiri dari komunitas warga yang hidup dari pertanian dan usaha kecil.
                     Desa ini tumbuh lewat kerja sama warga yang terus membangun fasilitas, layanan publik, dan kegiatan sosial.
                     Perkembangan teknologi mendorong desa membuat layanan digital agar informasi, program, dan pelayanan desa lebih mudah diakses semua warga.
@@ -83,61 +82,62 @@
             </div>
             <!-- Image Section -->
             <div class="w-full md:w-1/2 flex items-center justify-center">
-                <img src="{{ url('/images/png/logo.png') }}" alt="Logo" class="w-full max-w-[500px]"> <!-- Set width to a max of 500px -->
+                <img src="{{ url('/images/png/logo.png') }}" alt="Logo" class="w-full max-w-[500px]">
             </div>
         </div>
     </section>
 
     <!-- Section 4: Berita Terkini -->
     <section class="bg-[#FDFBF7] py-12">
-        <div class="flex items-center space-x-4 h-min px-6 lg:px-60 ">
-             <x-bi-newspaper class="w-14 h-14 text-[#E3B765]" />
-             <h1 class="text-4xl sm:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
-                 Berita Terkini
-             </h1>
-         </div>
+        <div class="flex items-center space-x-4 h-min px-6 xl:px-60 ">
+            <x-bi-newspaper class="w-14 h-14 text-[#E3B765]" />
+            <h1 class="text-4xl lg:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
+                Berita Terkini
+            </h1>
+        </div>
 
-        <div class="w-full sm:w-3/4 mx-auto flex flex-col sm:flex-row justify-between sm:space-x-5 space-y-5 sm:space-y-0">
+        <div class="md:w-full lg:w-full xl:w-3/4 mx-auto flex flex-col lg:flex-row justify-between lg:space-x-5 space-y-5 lg:space-y-0">
             <!-- MainNews Component -->
             <x-cards.news-main
                 image="{{ asset('images/png/sample/home1.png') }}"
                 title="Program Pertanian: Pengenalan Pupuk Organik Bersama Penyuluh Lapangan Kecamatan"
                 description="Pada 22 Juli 2025, Desa Karangwangi mengadakan pengenalan pupuk organik bersama penyuluh Kecamatan Sukamaju. Petani menerima penjelasan singkat tentang manfaat dan cara penggunaan pupuk organik untuk meningkatkan hasil panen."
+                link=""
             />
 
             <!-- News Items -->
-            <div class="w-full sm:w-3/7 flex flex-col space-y-4">
+            <div class="w-full lg:w-3/7 flex flex-col space-y-4">
                 <x-cards.news-sub
                     image="{{ asset('images/png/sample/home2.png') }}"
                     title="Literasi Digital: Pemanfaatan Aplikasi Layanan Desa"
                     date="25 Oktober 2025"
+                    link="/"
                 />
                 <x-cards.news-sub
                     image="{{ asset('images/png/sample/home3.png') }}"
                     title="Bimbingan Teknis UMKM: Cara Mengurus NIB dan Perizinan Online"
                     date="20 Januari 2025"
+                    link="/"
                 />
                 <x-cards.news-sub
                     image="{{ asset('images/png/sample/home4.png') }}"
                     title="Seminar Keamanan Desa: Sistem Siskamling Baru"
                     date="12 Januari 2025"
+                    link=""
                 />
-                <button class="mt-6 bg-[#D4A017] text-white py-2 px-6 rounded-lg">Lihat Berita Selengkapnya</button>
+                <button class="mt-6 bg-[#D4A017] text-white py-2 px-6 rounded-lg mx-5">Lihat Berita Selengkapnya</button>
             </div>
         </div>
     </section>
 
-
     <!-- Section 5: Carousel Section -->
     <section class="bg-[#FDFBF7] py-16">
-
         <div class="flex items-center space-x-4 h-min px-6 lg:px-60 ">
             <x-mdi-information class="w-14 h-14 text-[#E3B765]" />
             <h1 class="text-4xl sm:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-12">
                 Informasi Kegiatan Desa
             </h1>
         </div>
-
 
         <div class="carousel w-full">
             <div class="carousel-images">
@@ -152,11 +152,11 @@
     <!-- Section 6: Desa Bersuara -->
     <section class="bg-[#FDFBF7] py-16">
         <!-- Title and Description -->
-
         <div class="flex items-center space-x-4 h-min px-6 lg:px-60 ">
             <x-iconoir-sound-high-solid class="w-14 h-14 text-[#E3B765]" />
             <h1 class="text-4xl sm:text-6xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-5">
-                Desa Bersuara</h1>
+                Desa Bersuara
+            </h1>
         </div>
 
         <h2 class="text-2xl sm:text-4xl text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#E3B765] to-[#7D6538] py-5 px-6 lg:px-60 ">
@@ -198,10 +198,8 @@
                 title="Partisipasi Warga Lebih Mudah"
                 description="Ikut serta dalam pembangunan desa melalui fitur respons, voting, dan diskusi sederhana."
             />
-
         </div>
     </section>
-
 
     <!-- Section 7: Cara Mengisi Desa Bersuara -->
     <section class="bg-[#FDFBF7] py-16">
@@ -298,102 +296,103 @@
     <!-- Footer -->
     <x-footers.home />
 
-    <!-- Scripts -->
-    <script>
-        var ctxPopulasi = document.getElementById('chartPopulasi').getContext('2d');
-        var chartPopulasi = new Chart(ctxPopulasi, {
-            type: 'bar',
-            data: {
-                labels: ['Balita', 'Anak-anak', 'Remaja', 'Dewasa', 'Lansia'],
-                datasets: [{
-                    label: 'Jumlah Penduduk',
-                    data: [540, 560, 520, 542, 620],
-                    backgroundColor: '#CDAA65',
-                }]
-            },
-            options: {
-              maintainAspectRatio: false,  // Disable aspect ratio to control height and width independently
-              aspectRatio: 1.5,  // Set aspect ratio (optional)
-                scales: {
-                    x: { grid: { display: false } },
-                    y: { grid: { display: false }, ticks: { display: false } }
-                },
-                plugins: {
-                    datalabels: {
-                        anchor: 'end',
-                        align: 'top',
-                        font: { family: 'Poppins', weight: 'bold', size: 14 },
-                        color: 'black'
-                    },
-                    legend: {
-                        display: false, // Hide the legend
-                    },
-                    title: {
-                        display: false, // Hide the chart title
-                    },
-                }
-            },
-            plugins: [ChartDataLabels]
-        });
+</body>
 
-        var ctxGender = document.getElementById('chartGender').getContext('2d');
-        var chartGender = new Chart(ctxGender, {
-            type: 'doughnut',
-            data: {
-                labels: ['Pria', 'Perempuan'],
-                datasets: [{
-                    label: 'Gender Distribution',
-                    data: [50, 50],
-                    backgroundColor: ['#CDAA65', '#3D6B47'],
-                }]
+<!-- Scripts -->
+<script>
+    var ctxPopulasi = document.getElementById('chartPopulasi').getContext('2d');
+    var chartPopulasi = new Chart(ctxPopulasi, {
+        type: 'bar',
+        data: {
+            labels: ['Balita', 'Anak-anak', 'Remaja', 'Dewasa', 'Lansia'],
+            datasets: [{
+                label: 'Jumlah Penduduk',
+                data: [540, 560, 520, 542, 620],
+                backgroundColor: '#CDAA65',
+            }]
+        },
+        options: {
+          maintainAspectRatio: false,  // Disable aspect ratio to control height and width independently
+          aspectRatio: 1.5,  // Set aspect ratio (optional)
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { display: false }, ticks: { display: false } }
             },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                      position: 'bottom',
-                      labels: {
-                        font: {
-                          size: 16
-                        },
-                        boxWidth: 20, // Adjust the size of the box
-                        usePointStyle: true, // This makes the markers circular
-                        pointStyle: 'circle', // Set the point style to circle
-                        padding: 40
-                      }
-                    }
+            plugins: {
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    font: { family: 'Poppins', weight: 'bold', size: 14 },
+                    color: 'black'
+                },
+                legend: {
+                    display: false, // Hide the legend
+                },
+                title: {
+                    display: false, // Hide the chart title
+                },
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    var ctxGender = document.getElementById('chartGender').getContext('2d');
+    var chartGender = new Chart(ctxGender, {
+        type: 'doughnut',
+        data: {
+            labels: ['Pria', 'Perempuan'],
+            datasets: [{
+                label: 'Gender Distribution',
+                data: [50, 50],
+                backgroundColor: ['#CDAA65', '#3D6B47'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                  position: 'bottom',
+                  labels: {
+                    font: {
+                      size: 16
+                    },
+                    boxWidth: 20, // Adjust the size of the box
+                    usePointStyle: true, // This makes the markers circular
+                    pointStyle: 'circle', // Set the point style to circle
+                    padding: 40
+                  }
                 }
             }
-        });
-    </script>
-
-    <style>
-        .carousel {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            overflow: hidden;
         }
+    });
+</script>
 
-        .carousel-images {
-            display: flex;
-            animation: slide 24s infinite;
-        }
+<style>
+    .carousel {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
 
-        .carousel-image {
-            width: 100%;
-            height: 1000px;
-            object-fit: cover;
-        }
+    .carousel-images {
+        display: flex;
+        animation: slide 24s infinite;
+    }
 
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-100%); }
-            50% { transform: translateX(-200%); }
-            75% { transform: translateX(-300%); }
-            100% { transform: translateX(0); }
-        }
-    </style>
-</body>
+    .carousel-image {
+        width: 100%;
+        height: 1000px;
+        object-fit: cover;
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-100%); }
+        50% { transform: translateX(-200%); }
+        75% { transform: translateX(-300%); }
+        100% { transform: translateX(0); }
+    }
+</style>
 
 </html>
