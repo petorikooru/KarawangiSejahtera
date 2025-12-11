@@ -1,42 +1,58 @@
-FROM php:8.3-fpm
+FROM alpine:latest
 
 WORKDIR /var/www/html
+COPY . /var/www/html
 
-# Dependencies
-RUN apt-get update && apt-get install -y \
-    libpng-dev libjpeg-dev libfreetype6-dev libzip-dev zip unzip git curl \
-    supervisor nginx default-mysql-client \
-    && docker-php-ext-install pdo_mysql mysqli gd zip bcmath
+# Usefull utilities
+RUN apk add fish vim
 
-# NodeJS
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
+RUN apk add php83-cli
+# Laravel stuff
+RUN apk add php83 \
+    php83-fpm \
+    php83-pdo \
+    php83-pdo_mysql \
+    php83-mbstring \
+    php83-xmlwriter \
+    php83-xml \
+    php83-curl \
+    php83-tokenizer \
+    php83-ctype \
+    php83-json \
+    php83-fileinfo \
+    php83-session \
+    php83-openssl \
+    php83-dom \
+    php83-phar \
+    php83-zip \
+    php83-bcmath \
+    php83-gd
 
-# Composer
-RUN curl -sS https://getcomposer.org/installer | php -- \
-    --install-dir=/usr/local/bin --filename=composer
+# Other web stuff
+RUN apk add nginx \
+    curl \
+    git \
+    nodejs \
+    npm \
+    supervisor
 
-# Copy composer first
-COPY composer.json composer.lock ./
+RUN ln -s /usr/bin/php83 /usr/bin/php
 
-# Install backend deps
-RUN composer install --no-dev --optimize-autoloader
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN rm -rf composer-setup.php
 
-# Install frontend deps + build
-COPY package.json package-lock.json ./
-RUN npm install && npm run build
-
-# Copy app
+# Building process
 COPY . .
-
-# Permissions
-RUN chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
-
-# Configs
-COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./supervisord.conf /etc/supervisord.conf
-COPY ./supervisord.conf /etc/supervisor/supervisord.conf
+RUN composer install --no-dev
+RUN chown -R nobody:nobody /var/www/html/storage
 
 EXPOSE 80
+
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./supervisord.conf /etc/supervisord.conf
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+# FIX PERMISSION ISSUE KAJLSFHLJASHFKJLAF
+RUN chmod -R gu+w storage
+RUN chmod -R guo+w storage

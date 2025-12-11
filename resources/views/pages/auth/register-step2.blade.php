@@ -8,8 +8,7 @@
 
     <!-- Hidden data dari step 1 -->
     <input type="hidden" name="name" value="{{ session('register_data.name') }}">
-    <input type="hidden" name="phone" value="{{ session('register_data.phone') }}">
-    <input type="hidden" name="role" value="{{ session('register_data.role') }}">
+    <input type="hidden" name="email" value="{{ session('register_data.email') }}">
 
     <!-- Nama Lengkap (Read-only) -->
     <div>
@@ -68,16 +67,7 @@
         @error('address') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
     </div>
 
-    <!-- Nomor Telepon (Read-only) -->
-    <div>
-        <label class="block text-lg font-medium text-gray-700 mb-3">Nomor Telepon</label>
-        <div class="flex items-center gap-4 px-6 py-5 bg-gray-100 border-2 border-gray-300 rounded-2xl">
-            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            <span class="text-lg font-medium text-gray-900">{{ session('register_data.phone') }}</span>
-        </div>
-    </div>
+
 
     <!-- Submit Button -->
     <button type="submit"

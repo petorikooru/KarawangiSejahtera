@@ -44,26 +44,38 @@ Route::post('/daftar', [AuthController::class, 'registerStore'])->name('register
 // ============================================
 // Authenticated + Role: User
 // ============================================
-Route::middleware(['auth', 'check_role:user'])->prefix('user')->name('user.')->group(function () {
 
     // Dashboard & Main Pages
-    Route::get('/home', [UserController::class, 'main'])->name('home');
-    Route::get('/pengaturan', [UserController::class, 'pengaturan'])->name('pengaturan');
-    Route::get('/notifikasi', [UserController::class, 'notifikasi'])->name('notifikasi');
+    Route::get('user/home', [UserController::class, 'main'])->name('home');
+        Route::get('user/pengaturan', [UserController::class, 'pengaturan'])->name('pengaturan');
+        Route::get('/notifikasi', [UserController::class, 'notifikasi'])->name('notifikasi');
 
     // Static pages (you can move them to controller later if you want)
-    Route::view('/pelatihan', 'pages.user.pelatihan')->name('pelatihan');
-    Route::view('/desa-bersuara', 'pages.user.desa-bersuara')->name('desa-bersuara');
-    Route::view('/umkm', 'pages.user.umkm')->name('umkm');
+    Route::view('user/pelatihan', 'pages.user.pelatihan')->name('pelatihan');
+    Route::view('user/desa-bersuara', 'pages.user.desa-bersuara')->name('desa-bersuara');
+    Route::view('user/umkm', 'pages.user.umkm')->name('umkm');
 
     // Pelatihan (real controller)
-    Route::get('/pelatihan', [PelatihanController::class, 'index'])
-         ->withoutMiddleware('check_role:user') // already inside the group
-         ->name('pelatihan.index');
+        Route::get('user/pelatihan', [PelatihanController::class, 'index']);
+// Route::prefix('user')->name('user.')->group(function () {
 
-    Route::post('/pelatihan/{pelatihan}/register', [PelatihanController::class, 'register'])
-         ->name('pelatihan.register');
-});
+//     // Dashboard & Main Pages
+//     Route::get('/home', [UserController::class, 'main'])->name('home');
+//     Route::get('/pengaturan', [UserController::class, 'pengaturan'])->name('pengaturan');
+//     Route::get('/notifikasi', [UserController::class, 'notifikasi'])->name('notifikasi');
+
+//     // Static pages (you can move them to controller later if you want)
+//     Route::view('/pelatihan', 'pages.user.pelatihan')->name('pelatihan');
+//     Route::view('/desa-bersuara', 'pages.user.desa-bersuara')->name('desa-bersuara');
+//     Route::view('/umkm', 'pages.user.umkm')->name('umkm');
+
+//     // Pelatihan (real controller)
+//         Route::get('/pelatihan', [PelatihanController::class, 'index'])
+//             ->name('pelatihan.index');
+
+//     Route::post('/pelatihan/{pelatihan}/register', [PelatihanController::class, 'register'])
+//          ->name('pelatihan.register');
+// });
 
 // ============================================
 // Verification Routes (still public but require auth)

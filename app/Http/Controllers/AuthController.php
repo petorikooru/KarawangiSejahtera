@@ -16,16 +16,18 @@ class AuthController extends Controller
     public function registerStep1(Request $request)
     {
         $validated = $request->validate([
-            'name'  => 'required|string|max:100',
-            'phone' => 'required|string|regex:/^08[0-9]{8,12}$/|unique:users,phone',
-            'role'  => 'required|in:warga,umkm',
+              'name'     => 'required|string|max:100',
+              'email'    => 'required|email|max:100|unique:users,email',
+              'password' => 'required|min:8|confirmed',
         ], [
-            'phone.regex' => 'Nomor telepon harus diawali 08 dan berisi 10–14 digit.',
-            'phone.unique' => 'Nomor telepon ini sudah terdaftar.',
+              'email.unique' => 'Email ini sudah terdaftar.',
         ]);
 
         // Simpan sementara di session
         session()->flash('register_data', $validated);
+
+           // Hash the password before storing in session
+           $validated['password'] = Hash::make($validated['password']);
 
         return redirect()->route('register.step2');
     }
@@ -64,7 +66,6 @@ public function registerStore(Request $request)
         'name'     => $step1['name'],
         'email'    => $validated['email'],
         'phone'    => $step1['phone'],
-        'role'     => $step1['role'],
         'password' => Hash::make($validated['password']),
         'birth_date' => $birthDate,
         'gender'   => $validated['gender'],

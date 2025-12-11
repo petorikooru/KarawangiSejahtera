@@ -26,11 +26,22 @@
         @error('email') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
     </div>
 
+
     <!-- Password -->
     <div>
         <label class="flex items-center gap-4 px-5 py-4 bg-amber-900/10 border-2 border-amber-700 rounded-2xl focus-within:ring-4 focus-within:ring-amber-200 transition">
             <img src="{{ asset('images/png/lock.png') }}" alt="" class="w-5 h-5">
             <input type="password" name="password" placeholder="Kata Sandi"
+                   class="w-full bg-transparent text-lg placeholder-gray-500 focus:outline-none" required>
+        </label>
+        @error('password') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
+    </div>
+
+    <!-- Konfirmasi Password -->
+    <div>
+        <label class="flex items-center gap-4 px-5 py-4 bg-amber-900/10 border-2 border-amber-700 rounded-2xl focus-within:ring-4 focus-within:ring-amber-200 transition">
+            <img src="{{ asset('images/png/lock.png') }}" alt="" class="w-5 h-5">
+            <input type="password" name="password_confirmation" placeholder="Konfirmasi Kata Sandi"
                    class="w-full bg-transparent text-lg placeholder-gray-500 focus:outline-none" required>
         </label>
     </div>
