@@ -2,26 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PelatihanController;
+use App\Http\Controllers\AuthController;           // ← add this if not already
+use App\Http\Controllers\VerificationController; // ← add if not already
+use App\Http\Requests\chartsHome;
 
-Route::get("/", function () {
-    return view("pages.home.main");
-});
+// ============================================
+// Public Routes
+// ============================================
+Route::view('/', 'pages.home.main');
+Route::view('/laravel', 'welcome');
 
-Route::get("/laravel", function () {
-    return view("welcome");
-});
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get("/daftar", function () {
-    return view("pages.daftar.daftar");
-});
+Route::get('/charts', [chartsHome::class, 'showCharts']);
 
-route::get("/daftar2", function () {
-    return view("pages.daftar.daftar2");
-});
-
-route::get("/login", function () {
-    return view("pages.login.login");
-});
+Route::get('/login', function () {
+    return view('pages.auth.login');
+})->name('login');
 
 Route::post('/login', [AuthController::class, 'login']);
 
@@ -41,35 +39,46 @@ Route::get('/daftar', function () {
     return view('pages.auth.register-step2');
 })->name('register.step2');
 
-Route::get("/charts", [chartsHome::class, "showCharts"]);
+Route::post('/daftar', [AuthController::class, 'registerStore'])->name('register.store');
 
+// ============================================
+// Authenticated + Role: User
+// ============================================
+Route::middleware(['auth', 'check_role:user'])->prefix('user')->name('user.')->group(function () {
 
+    // Dashboard & Main Pages
+    Route::get('/home', [UserController::class, 'main'])->name('home');
+    Route::get('/pengaturan', [UserController::class, 'pengaturan'])->name('pengaturan');
+    Route::get('/notifikasi', [UserController::class, 'notifikasi'])->name('notifikasi');
 
-// Backend stuff (i do NOT understand any at all lmao -demetori0)
+    // Static pages (you can move them to controller later if you want)
+    Route::view('/pelatihan', 'pages.user.pelatihan')->name('pelatihan');
+    Route::view('/desa-bersuara', 'pages.user.desa-bersuara')->name('desa-bersuara');
+    Route::view('/umkm', 'pages.user.umkm')->name('umkm');
 
-// Route::get("/login", fn() => view("pages.auth.login"))->name("login");
-// Route::post("/login", [AuthController::class, "login"]);
+    // Pelatihan (real controller)
+    Route::get('/pelatihan', [PelatihanController::class, 'index'])
+         ->withoutMiddleware('check_role:user') // already inside the group
+         ->name('pelatihan.index');
 
-Route::get("/register", fn() => view("pages.auth.register"))->name("register");
-Route::post("/register", [AuthController::class, "register"]);
-
-Route::get("/logout", [AuthController::class, "logout"]);
-
-Route::group(["middleware" => ["auth", "check_role:admin"]], function () {
-    Route::get("/admin", fn() => "halaman admin");
+    Route::post('/pelatihan/{pelatihan}/register', [PelatihanController::class, 'register'])
+         ->name('pelatihan.register');
 });
-Route::group(
-    ["middleware" => ["auth", "check_role:user", "check_status"]],
-    function () {
-        Route::get("/user", fn() => "halaman user");
-    },
-);
-Route::group(["middleware" => ["auth", "check_role:user"]], function () {
-    Route::get("/verify", [VerificationController::class, "showVerifyForm"]);
-    Route::post("/verify", [VerificationController::class, "sendOtp"]);
-    Route::get("/verify/{unique_id}", [VerificationController::class, "show"]);
-    Route::put("/verify/{unique_id}", [
-        VerificationController::class,
-        "update",
-    ]);
+
+// ============================================
+// Verification Routes (still public but require auth)
+// ============================================
+Route::middleware('auth')->group(function () {
+    Route::get('/verify', [VerificationController::class, 'showVerifyForm'])->name('verify.form');
+    Route::post('/verify', [VerificationController::class, 'sendOtp'])->name('verify.send');
+    Route::get('/verify/{unique_id}', [VerificationController::class, 'show'])->name('verify.show');
+    Route::put('/verify/{unique_id}', [VerificationController::class, 'update'])->name('verify.update');
+});
+
+// ============================================
+// Admin Routes
+// ============================================
+Route::middleware(['auth', 'check_role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', fn () => 'Halaman Admin')->name('dashboard');
+    // tambahkan route admin lain di sini nanti
 });
