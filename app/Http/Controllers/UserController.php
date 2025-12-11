@@ -36,6 +36,7 @@ class UserController extends Controller
             // Dummy berita
             $berita = collect([
                 (object) [
+                    'id' => '1',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Majidee_Malay_Village.JPG/1280px-Majidee_Malay_Village.JPG',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -44,6 +45,7 @@ class UserController extends Controller
                     'sumber' => 'Desa Karangwangi'
                 ],
                 (object) [
+                    'id' => '2',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -52,6 +54,7 @@ class UserController extends Controller
                     'sumber' => 'Desa Karangwangi'
                 ],
                 (object) [
+                    'id' => '3',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -60,6 +63,7 @@ class UserController extends Controller
                     'sumber' => 'Desa Karangwangi'
                 ],
                 (object) [
+                    'id' => '4',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -68,6 +72,7 @@ class UserController extends Controller
                     'sumber' => 'Desa Karangwangi'
                 ],
                 (object) [
+                    'id' => '5',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -76,6 +81,7 @@ class UserController extends Controller
                     'sumber' => 'Desa Karangwangi'
                 ],
                 (object) [
+                    'id' => '6',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -84,6 +90,7 @@ class UserController extends Controller
                     'sumber' => 'Desa Karangwangi'
                 ],
                 (object) [
+                    'id' => '7',
                     'kategori' => 'Teknologi',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'judul' => 'Literasi Digital: Pemanfaatan Aplikasi Layanan Desa untuk Warga Karangwangi',
@@ -96,6 +103,7 @@ class UserController extends Controller
             // Dummy pelatihan
             $pelatihan = collect([
                 (object) [
+                    'id' => '1',
                     'thumbnail' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Majidee_Malay_Village.JPG/1280px-Majidee_Malay_Village.JPG',
                     'title' => 'Kelas Bisnis UMKM',
                     'category' => 'Bisnis',
@@ -106,6 +114,7 @@ class UserController extends Controller
                     'link' => '#'
                 ],
                 (object) [
+                    'id' => '2',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'title' => 'Coaching Clinic',
                     'category' => 'Bisnis',
@@ -116,6 +125,7 @@ class UserController extends Controller
                     'link' => '#'
                 ],
                 (object) [
+                    'id' => '3',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'title' => 'Kelas Bisnis 2024',
                     'category' => 'Digital',
@@ -126,6 +136,7 @@ class UserController extends Controller
                     'link' => '#'
                 ],
                 (object) [
+                    'id' => '4',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'title' => 'Klinik Konsultasi Bisnis',
                     'category' => 'Konsultasi',
@@ -136,6 +147,7 @@ class UserController extends Controller
                     'link' => '#'
                 ],
                 (object) [
+                    'id' => '5',
                     'thumbnail' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Majidee_Malay_Village.JPG/1280px-Majidee_Malay_Village.JPG',
                     'title' => 'Workshop Pemasaran Digital UMKM',
                     'category' => 'Digital',
@@ -146,6 +158,7 @@ class UserController extends Controller
                     'link' => '#'
                 ],
                 (object) [
+                    'id' => '6',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'title' => 'Seminar Keuangan Berkelanjutan',
                     'category' => 'Bisnis',
@@ -156,6 +169,7 @@ class UserController extends Controller
                     'link' => '#'
                 ],
                 (object) [
+                    'id' => '7',
                     'thumbnail' => 'https://www.shutterstock.com/image-photo/dieng-indonesia-july-10-2023-600nw-2334536475.jpg',
                     'title' => 'Bootcamp Inovasi Produk UMKM',
                     'category' => 'Inovasi',
