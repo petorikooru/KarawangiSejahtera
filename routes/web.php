@@ -3,6 +3,7 @@
 use App\Http\Requests\chartsHome;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 Route::get("/", function () {
     return view("pages.home.main");
@@ -11,6 +12,8 @@ Route::get("/", function () {
 Route::get("/laravel", function () {
     return view("welcome");
 });
+
+       //Daftar dan Login
 
 Route::get("/daftar", function () {
     return view("pages.daftar.daftar");
@@ -23,6 +26,8 @@ route::get("/daftar2", function () {
 route::get("/login", function () {
     return view("pages.login.login");
 });
+
+        // User Pages
 
 Route::get("/user/home",        [UserController::class, 'Home']);
 route::get("user/pengaturan",   [UserController::class, 'Pengaturan']);
@@ -42,7 +47,9 @@ route::get("user/umkm", function () {
 
 Route::get("/charts", [chartsHome::class, "showCharts"]);
 
+//Admin Pages
 
+Route::get("/admin/dashboard", [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 // Backend stuff (i do NOT understand any at all lmao -demetori0)
 
