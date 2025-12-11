@@ -419,3 +419,56 @@
 2025-12-11 05:24:09,918 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-12-11 05:24:09,919 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2025-12-11 05:24:09,920 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 08:48:55,062 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-12-11 08:48:55,068 INFO supervisord started with pid 1
+2025-12-11 08:48:56,099 INFO spawned: 'vite' with pid 8
+2025-12-11 08:48:56,105 INFO spawned: 'nginx' with pid 9
+2025-12-11 08:48:56,107 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:48:57,115 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 08:48:57,115 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 08:48:57,116 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:48:57,179 WARN exited: vite (exit status 127; not expected)
+2025-12-11 08:48:58,184 INFO spawned: 'vite' with pid 28
+2025-12-11 08:48:59,176 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:48:59,186 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 08:48:59,204 WARN exited: vite (exit status 127; not expected)
+2025-12-11 08:49:00,208 INFO spawned: 'vite' with pid 40
+2025-12-11 08:49:00,897 WARN exited: vite (exit status 127; not expected)
+2025-12-11 08:49:01,902 INFO spawned: 'vite' with pid 52
+2025-12-11 08:49:02,628 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:49:02,629 INFO gave up: php-fpm entered FATAL state, too many start retries too quickly
+2025-12-11 08:49:02,654 WARN exited: vite (exit status 127; not expected)
+2025-12-11 08:49:04,658 INFO spawned: 'vite' with pid 65
+2025-12-11 08:49:05,360 WARN exited: vite (exit status 127; not expected)
+2025-12-11 08:49:08,367 INFO spawned: 'vite' with pid 85
+2025-12-11 08:49:09,127 WARN exited: vite (exit status 127; not expected)
+2025-12-11 08:49:10,129 INFO gave up: vite entered FATAL state, too many start retries too quickly
+2025-12-11 08:56:22,962 INFO reaped unknown pid 345 (exit status 0)
+2025-12-11 08:59:03,994 WARN received SIGQUIT indicating exit request
+2025-12-11 08:59:03,995 INFO waiting for nginx to die
+2025-12-11 08:59:06,877 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-12-11 08:59:06,883 INFO supervisord started with pid 1
+2025-12-11 08:59:07,889 INFO spawned: 'vite' with pid 7
+2025-12-11 08:59:07,895 INFO spawned: 'nginx' with pid 8
+2025-12-11 08:59:07,898 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:59:09,605 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 08:59:09,606 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 08:59:09,607 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:59:12,586 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:59:15,590 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 08:59:15,591 INFO gave up: php-fpm entered FATAL state, too many start retries too quickly
+2025-12-11 09:05:31,358 WARN received SIGQUIT indicating exit request
+2025-12-11 09:05:31,359 INFO waiting for vite, nginx to die
+2025-12-11 09:08:58,268 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-12-11 09:08:58,275 INFO supervisord started with pid 1
+2025-12-11 09:08:59,279 INFO spawned: 'vite' with pid 7
+2025-12-11 09:08:59,284 INFO spawned: 'nginx' with pid 8
+2025-12-11 09:08:59,285 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 09:09:01,123 INFO success: vite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 09:09:01,124 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-12-11 09:09:01,124 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 09:09:03,128 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 09:09:06,371 INFO spawnerr: can't find command '/usr/sbin/php-fpm83'
+2025-12-11 09:09:06,372 INFO gave up: php-fpm entered FATAL state, too many start retries too quickly
+2025-12-11 09:12:02,795 WARN received SIGQUIT indicating exit request
+2025-12-11 09:12:02,797 INFO waiting for vite, nginx to die

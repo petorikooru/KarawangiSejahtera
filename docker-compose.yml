@@ -5,12 +5,13 @@ services:
     container_name: KarawangiSejahtera-app
     restart: unless-stopped
     working_dir: /var/www/html
-    user: "${UID}:${GID}"
     volumes:
-      - .:/var/www/html
+      - .env:/var/www/html/.env
+      - ./storage:/var/www/html/storage
+      - ./public:/var/www/html/public
     ports:
-      - "8000:80" # Laravel
-      - "5173:5173" # Vite
+      - "8000:80"
+      - "5173:5173"
     depends_on:
       - db
     environment:
@@ -35,15 +36,15 @@ services:
       - db_data:/var/lib/mysql
 
   phpmyadmin:
-   image: phpmyadmin:latest
-   container_name: KarawangiSejahtera-phpmyadmin
-   restart: unless-stopped
-   ports:
-    - "8080:80"
-   environment:
-     PMA_HOST: db
-     PMA_USER: root
-     PMA_PASSWORD: root
+    image: phpmyadmin:latest
+    container_name: KarawangiSejahtera-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
 
 volumes:
   db_data:
