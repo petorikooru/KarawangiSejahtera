@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Requests\chartsHome;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
 
 Route::get("/", function () {
     return view("pages.home.main");
@@ -12,8 +10,6 @@ Route::get("/", function () {
 Route::get("/laravel", function () {
     return view("welcome");
 });
-
-       //Daftar dan Login
 
 Route::get("/daftar", function () {
     return view("pages.daftar.daftar");
@@ -27,29 +23,27 @@ route::get("/login", function () {
     return view("pages.login.login");
 });
 
-        // User Pages
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::get("/user/home",        [UserController::class, 'Home']);
-route::get("user/pengaturan",   [UserController::class, 'Pengaturan']);
-route::get("user/notifikasi",   [UserController::class, 'Notifikasi']);
+// For completeness, add the others if not already there
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-route::get("user/pelatihan", function () {
-    return view("pages.user.pelatihan");
-});
+Route::get('/daftar2', function () {
+    return view('pages.auth.register-step1');
+})->name('register.step1');
 
-route::get("user/desa-bersuara", function () {
-    return view("pages.user.desa-bersuara");
-});
+Route::post('/daftar2', [AuthController::class, 'registerStep1']);
 
-route::get("user/umkm", function () {
-    return view("pages.user.umkm");
-});
+Route::get('/daftar', function () {
+    if (!session('register_data')) {
+        return redirect()->route('register.step1');
+    }
+    return view('pages.auth.register-step2');
+})->name('register.step2');
 
 Route::get("/charts", [chartsHome::class, "showCharts"]);
 
-//Admin Pages
 
-Route::get("/admin/dashboard", [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 // Backend stuff (i do NOT understand any at all lmao -demetori0)
 

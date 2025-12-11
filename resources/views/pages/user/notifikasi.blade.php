@@ -14,6 +14,7 @@
 
     <x-sidebars.user
         user="Hilman"
+        icon="images/png/sample/user1.png"
     />
     <x-headerbars.user
         user="Hilman"

@@ -12,8 +12,14 @@
 
 <body class="bg-[#FDFBF7] flex min-h-screen">
 
-    <x-sidebars.user user="Hilman" icon="images/png/sample/user1.png"/>
-    <x-headerbars.user user="Hilman" desa="Desa Karawangi" />
+    <x-sidebars.user
+        user="Hilman"
+        icon="images/png/sample/user1.png"
+    />
+    <x-headerbars.user
+        user="Hilman"
+        desa="Desa Karawangi"
+    />
 
     <!-- Main Content -->
     <div class="flex-1 ml-20 mt-16">
